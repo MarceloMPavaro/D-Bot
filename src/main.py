@@ -1,4 +1,5 @@
 import discord
+import os
  
 #intents = discord.Intents.all() # --> caso algum comando pare de funcionar/apresente mal funcionamento, descomentar essa linha de código e comentar a linha abaixo
 intents = discord.Intents.default()
@@ -18,5 +19,5 @@ async def on_message(message):
         await message.channel.send('Your ID matches')
     
     
- 
-client.run('MTA3MTg2MDQxMDgxMjIwMzAwOA.GbFlkQ.8dLzHLLmOaWTrer9G_-ETDfKP85nAOrM6oYuXg')
+token = os.environ['Disc'] #variável de ambiente, sempre que o discord token mudar eu preciso ir em variáveis de ambiente atualizar o token
+client.run(token)
