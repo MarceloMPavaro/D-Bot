@@ -1,3 +1,4 @@
+#lembrar de colocar o discord token em uma variável local após formatar
 import discord
 import os
  
@@ -12,7 +13,7 @@ async def on_ready():
  
 @client.event
 async def on_message(message):
-    print(message.author)
+    print(type(message.author.id))
     if message.author == client.user:
         return
     if message.content == str(message.author.id):
